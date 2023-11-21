@@ -13,12 +13,3 @@ void array_1d_print_chars(char const *arr)
         c++;
     }
 }
-
-void array_1d_print_ints (int const *arr, int size)
-{
-    int i;
-    while (arr[i] != '\0') {
-        mini_printf("%c\n", arr[i]);
-        i++;
-    }
-}
