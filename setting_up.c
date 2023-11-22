@@ -59,17 +59,26 @@ void fs_cat_500_bytes(char const *filepath)
     close(fd);
 }
 
-void fs_print_first_line(char const *filepath)
+void check_file(const char *filepath)
 {
-    int fd = open(filepath, O_RDONLY);
+    int warning = 0;
     char *buffer = (char *) malloc(sizeof(char) * 256);
-    size_t bytesRead = read(fd, buffer, 256);
+    int i = 0;
 
-    for (int i = 0; i < bytesRead; i++) {
-        if (buffer[i] == '\n') {
-            buffer[i] = '\0';
-            break;
-        }
+    while (buffer[i] != '\n' && buffer[i] != '\0') {
+        if (buffer[i] == '.' || buffer[i] == 'o')
+            warning++;
+        i++;
     }
-    mini_printf("%s\n", buffer);
+    if (warning > 0){
+        mini_printf("file not valid\n");
+    }
+    i += 2;
+    for (int j = 0; buffer[i] != '\0'; j++) {
+        if (buffer[i] != '.' && buffer[i] != 'o' && buffer[i] != '\n')
+            buffer[i] = '\0';
+        mini_printf("file is not valid\n");
+        i++;
+    }
+    mini_printf("file valide\n", buffer);
 }

@@ -14,6 +14,8 @@ SRC :=mini_printf.c\
 	setting_up.c\
 	setting_up2.c\
 	main.c\
+	setting_up3.c\
+	my_strlen.c\
 
 OBJ := $(SRC:.c=.o)
 
