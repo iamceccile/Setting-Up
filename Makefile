@@ -12,9 +12,7 @@ SRC :=mini_printf.c\
 	my_putchar.c\
 	my_put_nbr.c\
 	setting_up.c\
-	setting_up2.c\
 	main.c\
-	setting_up3.c\
 	my_strlen.c\
 
 OBJ := $(SRC:.c=.o)

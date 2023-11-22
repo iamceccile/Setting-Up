@@ -18,5 +18,4 @@ int main(int argc, char *argv[])
     fs_open_file(argv[1]);
     fs_cat_500_bytes(argv[1]);
     check_file(argv[1]);
-    check_lines(argv[1]);
 }
