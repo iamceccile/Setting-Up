@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <stdbool.h>
 
 int fs_open_file(char const *filepath)
 {
@@ -81,4 +82,16 @@ void check_file(const char *filepath)
         i++;
     }
     mini_printf("file valide\n", buffer);
+}
+
+void check_lines(const char *filepath)
+{
+    char *buffer = (char *) malloc(sizeof(char) * 256);
+    int i = 0;
+
+    for (i = '\0'; buffer[i] = '\0'; i++) {
+        if (buffer[i] != '\0' && buffer[i + 1] != '\n')
+            mini_printf("line not valid\n");
+    }
+    mini_printf("line valid\n", buffer);
 }
