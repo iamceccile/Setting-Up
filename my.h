@@ -21,4 +21,5 @@ void array_1d_print_chars(char const *arr);
 void array_1d_print_ints(int const *arr, int size);
 void check_file(const char *filepath);
 int my_strlen(char const *str);
+void check_lines(const char *filepath);
 #endif/* MY_H_ */
